@@ -1,0 +1,12 @@
+GET http://localhost:8000/api/products HTTP/1.1
+
+###
+
+POST http://localhost:8000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Testing title",
+    "price": "32.45",
+    "description": "This is a test description"
+}

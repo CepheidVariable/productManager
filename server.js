@@ -12,3 +12,4 @@ app.use(express.urlencoded({"extended":true}));
 require('./server/configs/database.config');
 
 // representation of routes file export - annonymous function
+require('./server/routes/product.routes')(app);
