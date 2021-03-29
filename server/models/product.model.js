@@ -7,9 +7,9 @@ const ProductSchema = new mongoose.Schema({
         minlength: [2, "Title must be at least two characters in length!"]
     },
     price: {
-        type: mongoose.Decimal128,
+        type: Number,
         required: [true, "Item must have a price!"],
-        min: [0, "Price must be greater than $0.00!"]
+        min: [0.01, "Price must be greater than $0.00!"]
     },
     description:{
         type: String,

@@ -7,6 +7,10 @@ Content-Type: application/json
 
 {
     "title": "Testing title",
-    "price": "32.45",
+    "price": "0",
     "description": "This is a test description"
 }
+
+###
+
+DELETE http://localhost:8000/api/products/606245d6dfde4122e4d239ff HTTP/1.1
