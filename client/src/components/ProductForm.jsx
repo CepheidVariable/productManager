@@ -8,7 +8,13 @@ export default props =>{
 
     const onSubmitHandler = e => {
         e.preventDefault();
-        
+        axios.post('http://localhost:8000/api/products', {
+            title,
+            price,
+            description
+        })
+            .then(res => console.log("response: ", res))
+            .catch(err => console.log("error: ", err));
     }
 
     return (
