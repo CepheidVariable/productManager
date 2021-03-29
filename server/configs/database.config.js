@@ -6,4 +6,4 @@ mongoose.connect(`mongodb://localhost/${db}`, {
     useUnifiedTopology: true
 })
     .then(() => console.log(`Success: MongoDB '${db}' connected`))
-    .catch(err => console.log("Warning: database connection failed!", err));
+    .catch(err => console.log("Warning: database connection failed!\n", err));
