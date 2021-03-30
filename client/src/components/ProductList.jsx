@@ -19,15 +19,13 @@ export default ({productsList}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {productsList.map( (p, idx) => {
-                        return(
-                            <tr key={idx}>
-                                <td>{<Link to={`people/${p._id}`} >{p.title}</Link>}</td>
-                                <td>{p.description}</td>
-                                <td>{formatter.format(p.price)}</td>
-                            </tr>
-                        )
-                    })}
+                    {productsList.map( (p, idx) => 
+                        (<tr key={idx}>
+                            <td>{<Link to={`people/${p._id}`} >{p.title}</Link>}</td>
+                            <td>{p.description}</td>
+                            <td>{formatter.format(p.price)}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
