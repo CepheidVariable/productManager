@@ -1,5 +1,6 @@
-import { Router } from '@reach/router';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Router } from '@reach/router';
 import Details from './components/Details';
 import Main from './views/Main';
 
