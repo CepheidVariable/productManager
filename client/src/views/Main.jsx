@@ -5,13 +5,11 @@ import ProductList from "../components/ProductList";
 
 export default() => {
     const [products, setProducts] = useState();
-    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products')
             .then(res => {
                 setProducts(res.data.results);
-                setIsLoaded(true);
             });
     }, []);
 
@@ -19,7 +17,7 @@ export default() => {
         <>
             <ProductForm />
             <hr/>
-            {isLoaded && <ProductList productsList={products} />}
+            {products && <ProductList productsList={products} />}
         </>
     );
 }
