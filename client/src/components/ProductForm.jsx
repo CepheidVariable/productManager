@@ -28,8 +28,8 @@ export default props =>{
             <div className="form-group row">
                 <label htmlFor="price" className="col-sm-3 col-form-label">Price:</label>
                 <div className="col-sm-3 input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
+                    <div className="input-group-prepend">
+                        <span className="input-group-text">$</span>
                     </div>
                     <input className="form-control" name="price" onChange={ e => setPrice(e.target.value) } />
                 </div>
