@@ -20,12 +20,12 @@ export default ({productsList}) => {
                 </thead>
                 <tbody>
                     {productsList.map( (p, idx) => 
-                        (<tr key={idx}>
+                        <tr key={idx}>
                             <td>{<Link to={`people/${p._id}`} >{p.title}</Link>}</td>
                             <td>{p.description}</td>
                             <td>{formatter.format(p.price)}</td>
                         </tr>
-                    ))}
+                    )}
                 </tbody>
             </table>
         </div>
