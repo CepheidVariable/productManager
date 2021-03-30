@@ -2,8 +2,8 @@ const ProductForm = props =>{
     const {inputs, onChangeHandler, onSubmitHandler, action, submitValue, errors} = props;
 
     return (
-        <form onSubmit={onSubmitHandler} className="col-6 mt-5">
-            <h2 className="text-center">{action}</h2>
+        <form onSubmit={onSubmitHandler} className="col-6 mt-2">
+            <h2 className="text-center mb-3">{action}</h2>
             <div className="form-group row">
                 <label htmlFor="title" className="col-sm-3 col-form-label">Title:</label>
                 <div className="col-sm-9">

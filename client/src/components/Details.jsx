@@ -13,16 +13,15 @@ const Details = ({id}) => {
     useEffect( ()=> {
         axios.get('http://localhost:8000/api/products/' + id)
             .then(res => setProduct(res.data.results[0]));
-    }, []);
+    }, [id]);
 
     return (
-        product && (
+        product && 
             <div className="text-center mt-5">
                 <p><strong>{product.title}</strong></p>
                 <p>{product.description}</p>
                 <p>{formatter.format(product.price)}</p>
             </div>
-        )
     )
 }
 

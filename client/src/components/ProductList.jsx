@@ -16,14 +16,16 @@ const ProductList = ({productsList}) => {
                         <th>Title</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {productsList.map( (p, idx) => 
                         <tr key={idx}>
-                            <td>{<Link to={`people/${p._id}`} >{p.title}</Link>}</td>
+                            <td>{<Link to={`products/show/${p._id}`} >{p.title}</Link>}</td>
                             <td>{p.description}</td>
                             <td>{formatter.format(p.price)}</td>
+                            <td><Link to={`products/edit/${p._id}`} className="btn btn-sm btn-primary">Edit</Link></td>
                         </tr>
                     )}
                 </tbody>

@@ -42,7 +42,7 @@ const Create = props => {
         <>
             <ProductForm
                 inputs={product}
-                title={"Create Joke"}
+                action={"Create Joke"}
                 submitValue="Create"
                 onChangeHandler={handleChange}
                 onSubmitHandler={handleSubmit}
