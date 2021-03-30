@@ -1,4 +1,4 @@
-import React from 'react';
+import {Link} from '@reach/router';
 
 export default ({productsList}) => {
     // Create number formatter
@@ -22,7 +22,7 @@ export default ({productsList}) => {
                     {productsList.map( (p, idx) => {
                         return(
                             <tr key={idx}>
-                                <td>{p.title}</td>
+                                <td>{<Link to={`people/${p._id}`} >{p.title}</Link>}</td>
                                 <td>{p.description}</td>
                                 <td>{formatter.format(p.price)}</td>
                             </tr>
