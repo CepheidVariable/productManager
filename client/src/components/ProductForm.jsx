@@ -1,32 +1,21 @@
-import { useState } from "react";
-import axios from 'axios';
-
 export default props =>{
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
-
-    const onSubmitHandler = e => {
-        e.preventDefault();
-        axios.post('http://localhost:8000/api/products', {
-            title,
-            price,
-            description
-        })
-            .then(res => console.log("response: ", res))
-            .catch(err => console.log("error: ", err));
-        setTitle("");
-        setPrice("");
-        setDescription("");
-    }
+    const {inputs, onChangeHandler, onSubmitHandler, action, submitValue, errors} = props;
 
     return (
         <form onSubmit={onSubmitHandler} className="col-6 mt-5">
+            <h2 className="text-center">{action}</h2>
             <div className="form-group row">
                 <label htmlFor="title" className="col-sm-3 col-form-label">Title:</label>
                 <div className="col-sm-9">
-                    <input className="form-control" value= {title} name="title" onChange={ e => setTitle(e.target.value) } />
+                    <input
+                        type="text"
+                        name="title"
+                        className="form-control"
+                        value= {inputs.title}
+                        onChange={onChangeHandler}
+                    />
                 </div>
+                <span className="text-danger"></span>
             </div>           
             <div className="form-group row">
                 <label htmlFor="price" className="col-sm-3 col-form-label">Price:</label>
@@ -34,18 +23,35 @@ export default props =>{
                     <div className="input-group-prepend">
                         <span className="input-group-text">$</span>
                     </div>
-                    <input className="form-control" value={price} name="price" onChange={ e => setPrice(e.target.value) } />
+                    <input
+                        type="text"
+                        name="price"
+                        className="form-control"
+                        value={inputs.price}
+                        onChange={onChangeHandler}
+                    />
                 </div>
+                <span className="text-danger"></span>
             </div>
             <div className="form-group row">
                 <label htmlFor="description" className="col-sm-3 col-form-label">Description:</label>
                 <div className="col-sm-9">
-                    <textarea className="form-control" value={description} name="description" onChange={ e => setDescription(e.target.value) } />
+                    <textarea
+                        name="description"
+                        className="form-control"
+                        value={inputs.description}
+                        onChange={onChangeHandler}
+                    />
                 </div>
+                <span className="text-danger"></span>
             </div>
             <div className="form-group row">
                 <div className="col-sm-2">
-                    <input className="form-control btn btn-dark" type="submit" value="Submit" />
+                    <input
+                        type="submit"
+                        className="form-control btn btn-dark"
+                        value={submitValue}
+                    />
                 </div>
             </div>
         </form>

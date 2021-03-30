@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ProductForm from "../components/ProductForm";
 import ProductList from "../components/ProductList";
+import Create from '../views/Create';
 
 export default() => {
     const [products, setProducts] = useState();
@@ -15,7 +15,7 @@ export default() => {
 
     return (
         <>
-            <ProductForm />
+            <Create />
             <hr/>
             {products && <ProductList productsList={products} />}
         </>
