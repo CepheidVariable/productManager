@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 
-export default ({id}) => {
+const Details = ({id}) => {
     const [product, setProduct] = useState({});
 
     // Create number formatter
@@ -25,3 +25,5 @@ export default ({id}) => {
         )
     )
 }
+
+export default Details;

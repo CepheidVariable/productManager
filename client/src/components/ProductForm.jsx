@@ -1,4 +1,4 @@
-export default props =>{
+const ProductForm = props =>{
     const {inputs, onChangeHandler, onSubmitHandler, action, submitValue, errors} = props;
 
     return (
@@ -15,7 +15,7 @@ export default props =>{
                         onChange={onChangeHandler}
                     />
                 </div>
-                <span className="text-danger"></span>
+                <span className="text-danger offset-3 pl-3">{errors.title && errors.title.message}</span>
             </div>           
             <div className="form-group row">
                 <label htmlFor="price" className="col-sm-3 col-form-label">Price:</label>
@@ -31,7 +31,7 @@ export default props =>{
                         onChange={onChangeHandler}
                     />
                 </div>
-                <span className="text-danger"></span>
+            <span className="text-danger text-left offset-3 pl-3 col-7">{errors.price && errors.price.message}</span>
             </div>
             <div className="form-group row">
                 <label htmlFor="description" className="col-sm-3 col-form-label">Description:</label>
@@ -43,7 +43,7 @@ export default props =>{
                         onChange={onChangeHandler}
                     />
                 </div>
-                <span className="text-danger"></span>
+                <span className="text-danger offset-3 pl-3">{errors.description && errors.description.message}</span>
             </div>
             <div className="form-group row">
                 <div className="col-sm-2">
@@ -57,3 +57,5 @@ export default props =>{
         </form>
     )
 }
+
+export default ProductForm;

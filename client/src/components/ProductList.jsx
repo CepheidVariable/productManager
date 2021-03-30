@@ -1,6 +1,6 @@
 import {Link} from '@reach/router';
 
-export default ({productsList}) => {
+const ProductList = ({productsList}) => {
     // Create number formatter
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -31,3 +31,5 @@ export default ({productsList}) => {
         </div>
     )
 }
+
+export default ProductList;

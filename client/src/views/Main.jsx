@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
 import Create from '../views/Create';
 
-export default() => {
+const Main = () => {
     const [products, setProducts] = useState();
 
     useEffect(() => {
@@ -21,3 +21,5 @@ export default() => {
         </>
     );
 }
+
+export default Main;

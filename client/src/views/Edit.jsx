@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ProductForm from "../components/ProductForm";
 
-export default props => {
+const Edit = props => {
     const [product, setProduct] = useState({
         title: "",
         price: "",
@@ -15,3 +15,5 @@ export default props => {
         </>
     )
 }
+
+export default Edit;
