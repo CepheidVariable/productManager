@@ -27,7 +27,7 @@ module.exports = {
     },
     delete: (req, res) => {
         Product.deleteOne({_id: req.params.id})
-            .then(data => res.json({results: data}))
+            .then(() => res.redirect(303, '/api/products'))
             .catch(err => res.status(404).json({errors: err.errors}))
     }
 };

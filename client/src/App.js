@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Router } from '@reach/router';
-import Details from './components/Details';
+import Show from './views/Show';
 import Main from './views/Main';
 import Edit from './views/Edit';
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Main path="/" />
-        <Details path="products/show/:id" />
+        <Show path="products/show/:id" />
         <Edit path="products/edit/:id" />
       </Router>
     </div>

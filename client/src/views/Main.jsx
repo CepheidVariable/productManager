@@ -13,11 +13,23 @@ const Main = () => {
             });
     }, []);
 
+    const handleDestroyProduct = id => {
+        console.log(id);
+        axios.delete('http://localhost:8000/api/products/' + id)
+            .then(res => setProducts(res.data.results))
+            .catch(err => console.log(err))
+    }
+
     return (
         <>
             <Create />
             <hr/>
-            {products && <ProductList productsList={products} />}
+            {products && 
+                <ProductList
+                    productsList={products}
+                    destroyHandler={handleDestroyProduct}
+                />
+            }
         </>
     );
 }

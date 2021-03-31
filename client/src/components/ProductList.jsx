@@ -1,6 +1,7 @@
 import {Link} from '@reach/router';
 
-const ProductList = ({productsList}) => {
+const ProductList = props => {
+    const {productsList, destroyHandler} = props;
     // Create number formatter
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -25,7 +26,10 @@ const ProductList = ({productsList}) => {
                             <td>{<Link to={`products/show/${p._id}`} >{p.title}</Link>}</td>
                             <td>{p.description}</td>
                             <td>{formatter.format(p.price)}</td>
-                            <td><Link to={`products/edit/${p._id}`} className="btn btn-sm btn-primary">Edit</Link></td>
+                            <td>
+                                <Link to={`products/edit/${p._id}`} className="btn btn-sm btn-primary">Edit</Link>
+                                <button onClick={() => destroyHandler(p._id)} className="btn btn-sm btn-danger ml-2">Delete</button>
+                            </td>
                         </tr>
                     )}
                 </tbody>

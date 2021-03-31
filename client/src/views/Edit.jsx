@@ -10,7 +10,7 @@ const Edit = props => {
         title:"",
         price:"",
         description:""
-    })
+    });
 
     useEffect( () => {
         axios.get('http://localhost:8000/api/products/' + props.id)
@@ -24,7 +24,7 @@ const Edit = props => {
         setProduct({
             ...product,
             [e.target.name] : e.target.value
-        })
+        });
     }
 
     const handleSubmit = e =>{
@@ -35,12 +35,6 @@ const Edit = props => {
                 console.log(err.response.data.errors);
                 setErrors(err.response.data.errors);
             });
-
-        // setProduct({
-        //     title: "",
-        //     price: "",
-        //     description: ""    
-        // });
     }
 
 
