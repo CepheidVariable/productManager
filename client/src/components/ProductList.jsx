@@ -10,7 +10,7 @@ const ProductList = props => {
 
     return(
         <div>
-            <h2>Products List:</h2>
+            <h2 className="mt-5">Products List:</h2>
             <table className="table col-8  ml-auto mr-auto">
                 <thead>
                     <tr>
@@ -27,7 +27,7 @@ const ProductList = props => {
                             <td>{p.description}</td>
                             <td>{formatter.format(p.price)}</td>
                             <td>
-                                <Link to={`products/edit/${p._id}`} className="btn btn-sm btn-primary">Edit</Link>
+                                <Link to={`products/edit/${p._id}`} className="btn btn-sm btn-secondary">Edit</Link>
                                 <button onClick={() => destroyHandler(p._id)} className="btn btn-sm btn-danger ml-2">Delete</button>
                             </td>
                         </tr>
